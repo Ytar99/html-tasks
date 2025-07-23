@@ -1,0 +1,249 @@
+:root {
+  --bg: #faf8f2;
+  --text: #2e2e2e;
+  --heading: #1c1c1c;
+  --primary: #7bb274;
+  --primary-dark: #5d8c58;
+  --card-bg: #fff;
+  --card-border: #e0ddce;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* HEADER */
+
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav__list {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.nav__link:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-image: linear-gradient(to right, #e4f1db, #f5f8ed);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.hero__text {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.hero__btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.hero__btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* SECTION TITLE */
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--heading);
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  margin-top: 0.5rem;
+  display: block;
+  border-radius: 2px;
+}
+
+/* GRID CARDS */
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tip-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
+.tip-card__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+}
+
+/* TIMELINE */
+
+.timeline {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.5rem;
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline__block {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.timeline__block::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.timeline__time {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.timeline__desc {
+  margin-top: 0.3rem;
+}
+
+/* РАНЖИРОВАНИЕ */
+
+.ranking-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.rank-card {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 6px solid var(--primary);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  align-items: flex-start;
+}
+
+.rank-card:hover {
+  background-color: #f9f9f9;
+}
+
+.rank-card__level {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.rank-card__title {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
